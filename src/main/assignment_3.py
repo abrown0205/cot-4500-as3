@@ -1,5 +1,5 @@
 import numpy as np
-np.set_printoptions(precision=7, suppress=True, linewidth=100)
+np.set_printoptions(precision=5, suppress=True, linewidth=100)
 
 
 def eulerMethod(initPoint, low, high, numIter, func):
@@ -143,20 +143,20 @@ if __name__ == "__main__":
     high = 2
     numIter = 10
     func = 't-w**2'
-    print(eulerMethod(initPoint, low, high, numIter, func))
-    print()
+    print("%.5f\r" % eulerMethod(initPoint, low, high, numIter, func))
+    print("\r")
 
     # Problem 2
-    print(rungeKutta(initPoint, low, high, numIter, func))
-    print()
+    print("%.5f\r" % rungeKutta(initPoint, low, high, numIter, func))
+    print("\r")
 
     # Problem 3
     n = 3
     matrix = np.array([[ 2.0, -1.0, 1.0,  6.0],
                        [ 1.0,  3.0, 1.0,  0.0],
                        [-1.0,  5.0, 4.0, -3.0]])
-    print(gaussianElimination(n, matrix))
-    print()
+    print("%s\r" % gaussianElimination(n, matrix))
+    print("\r")
 
     # Problem 4
     n = 4
@@ -165,13 +165,13 @@ if __name__ == "__main__":
                        [ 3.0, -1.0, -1.0,  2.0],
                        [-1.0,  2.0,  3.0, -1.0]])
 
-    print(np.linalg.det(matrix))
-    print()
+    print("%.5f\r" % np.linalg.det(matrix))
+    print("\r")
     ans = LUFactorization(n, matrix)
-    print(ans[0])
-    print()
-    print(ans[1])
-    print()
+    print(ans[0],"\r")
+    print("\r")
+    print(ans[1],"\r")
+    print("\r")
 
     # Problem 5
     n = 5
@@ -180,12 +180,12 @@ if __name__ == "__main__":
                        [0, 1, 7,  2, 3],
                        [4, 2, 3, 12, 2],
                        [3, 2, 4,  0, 8]])
-    print(diagonallyDominant(n, matrix))
-    print()
+    print("%s\r" % diagonallyDominant(n, matrix))
+    print("\r")
 
     # Problem 6
     n = 3
     matrix = np.array([[2, 2, 1],
                        [2, 3, 0],
                        [1, 0, 2]])
-    print(positiveDefinite(matrix))
+    print("%s\r" % positiveDefinite(matrix))
